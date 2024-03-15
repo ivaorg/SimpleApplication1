@@ -14,7 +14,7 @@ jobs:
   build:
     only:
       - main
-    working_directory: ~/example_application
+    working_directory: ~/SimpleApplication1
     docker:
       - image: circleci/node:10.16.3
     steps:
