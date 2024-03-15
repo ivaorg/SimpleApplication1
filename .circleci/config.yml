@@ -12,8 +12,6 @@ workflows:
 
 jobs:
   build:
-    only:
-      - main
     working_directory: ~/SimpleApplication1
     docker:
       - image: circleci/node:10.16.3
@@ -38,4 +36,5 @@ jobs:
     steps:
       - run:
           name: deploy-application
-          command: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@SEC2_PUBLIC_DNS "rm -rf SimpleApplication1/;git clone https://github.com/ivaorg/SimpleApplication1.git; source SimpleApplication1/deploy.sh"
+          command: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@SEC2_PUBLIC_DNS "rm -rf SimpleApplication1/; git clone https://github.com/ivaorg/SimpleApplication1.git; source SimpleApplication1/deploy.sh"
+
